@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke Factory - Home</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link th:href="@{css/css.css}" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+</head>
+<body>
+    <header>
+        <img src="images/logo.svg" width="600" id="logo" />
+        <nav>
+    		<a href="/" class="navLink"><img src="images/icons/home.svg" class="navIcon" width="40"/><h3>Home</h3></a>
+    		<a href="/showJokes" class="navLink"><img src="images/icons/laugh.svg" class="navIcon" width="40"/><h3>List All Jokes</h3></a>
+            <a href="/createJoke" class="navLink"><img src="images/icons/pencil-alt.svg" class="navIcon" width="40"/><h3>Create A Joke</h3></a>       
+    	</nav>
+        <div class="divider"></div>
+    </header>
+    <main>
+		<h1 style="text-align: center;"><b>Welcome to the Joke Factory!</b></h1>
+		<br>
+		<p>You're traveling through another dimension -- a dimension not only of sight and sound but of mind. A journey into a wondrous land whose boundaries are that of imagination. That's a signpost up ahead: your next stop: the Joke Factory!<p>
+		<br>
+		<p>Feel free to read all our jokes or submit your own! Just make sure that they are PG, as this is a project for school.</p>
+		
+    </main>
+    <footer>
+    	<p>Number of Page Hits: <span id="numHits"></span></p>
+        <p>Final Java Assignment!<p>
+        <p>By <a href="https://www.sheldonc.ca">Sheldon Codling</a></p>
+    </footer>
+    
+    <!-- Call the numHits script -->
+    <script type="text/javascript" th:src="@{hitCounter.js}"></script>
+</body>
+</html>

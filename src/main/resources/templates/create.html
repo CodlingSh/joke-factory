@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke Factory - Create</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link th:href="@{css/css.css}" rel="stylesheet" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <img src="images/logo.svg" width="600" id="logo" />
+        <nav>
+    		<a href="/" class="navLink"><img src="images/icons/home.svg" class="navIcon" width="40"/><h3>Home</h3></a>
+    		<a href="/showJokes" class="navLink"><img src="images/icons/home.svg" class="navIcon" width="40"/><h3>List All Jokes</h3></a>
+            <a href="/createJoke" class="navLink"><img src="images/icons/home.svg" class="navIcon" width="40"/><h3>Create A Joke</h3></a>       
+    	</nav>
+        <div class="divider"></div>
+    </header>
+    <main>
+    	<h3 style="text-align: center;"><b>Please fill out the form below to create a joke<b></b></h3>
+    	<br>
+    	<br>
+		<form action="#" th:action"@{/createJoke}" th:object="${theJoke}" method="post">
+		<p> Set Up : <input type="text" th:field="*{setUp}" /> </p>
+		<p th:if="${#fields.hasErrors('setUp')}" th:errors="*{setUp}"> </p>
+		<br>
+		<p> Punch Line : <input type="text" th:field="*{punchLine}" /> </p>
+		<p th:if="${#fields.hasErrors('punchLine')}" th:errors="*{punchLine}"> </p>
+		<br>
+		<p> Author : <input type="text" th:field="*{author}" /> </p>
+		<p th:if="${#fields.hasErrors('author')}" th:errors="*{author}"> </p>
+		<br><br>
+		<input type="submit" value="submit" />
+		</form>
+    </main>
+    <footer>
+    	<p>Number of Page Hits: <span id="numHits"></span></p>
+        <p>Final Java Assignment!<p>
+        <p>By <a href="https://www.sheldonc.ca">Sheldon Codling</a></p>
+    </footer>
+    
+    <!-- Call the numHits script -->
+    <script type="text/javascript" th:src="@{hitCounter.js}"></script>
+</body>
+</html>
